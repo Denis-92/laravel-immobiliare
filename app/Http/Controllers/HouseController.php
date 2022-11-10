@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\models\House;
+use Illuminate\Support\Facades\Log;
 
 class HouseController extends Controller
 {
@@ -17,6 +18,8 @@ class HouseController extends Controller
     {
         // recupero l'elenco delle case e lo stampo in pagina
 
+        //
+        Log::debug('sono entrato nell index');
         $houses = House::all();
         return view('houses.index', compact('houses'));
     }
