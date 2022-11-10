@@ -15,7 +15,8 @@ class HouseController extends Controller
      */
     public function index()
     {
-        //
+        // recupero l'elenco delle case e lo stampo in pagina
+
         $houses = House::all();
         return view('houses.index', compact('houses'));
     }
