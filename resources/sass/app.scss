@@ -1,9 +1,8 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-.container{
+// Variables
+@import 'variables';
 
-    display: flex;
-    max-width: 1200px;
-    margin: auto;
-
-}
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';

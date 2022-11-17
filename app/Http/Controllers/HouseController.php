@@ -65,9 +65,11 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(House $house)
     {
         //
+        return view('houses.edit', compact('house'));
+
     }
 
     /**
@@ -77,9 +79,27 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, House $house)
     {
         //
+        $request->validate([
+            'dimensione' => 'required|max:255',
+            'descrizione' => 'required',
+            'prezzo' => 'required|numeric',
+            'classe_energetica' => 'required|max:255',
+            'indirizzo' => 'required|max:255',
+            'piani' => 'required|max:255',
+            'proprietario' => 'required|max:255',
+            'numero_di_stanze' => 'required|max:255',
+            'data_di_costruzione' => 'required|date',
+            'garage' => 'required|max:255',
+        ]);
+        $form = $request->all();
+        $house->update($form);
+
+        return redirect()->route('houses.show', $house->id);
+
+
     }
 
     /**
