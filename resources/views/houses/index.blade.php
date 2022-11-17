@@ -10,9 +10,11 @@
 
 <body>
 
+    <a href="{{ route('houses.create') }}">Crea nuovo record</a>
+
     @foreach ($houses as $house)
         <div>
-            <a href="{{route('houses.show', $house->id)}}">{{ $house->proprietario }} </a>
+            <a href="{{ route('houses.show', $house->id) }}">{{ $house->proprietario }} </a>
         </div>
     @endforeach
 

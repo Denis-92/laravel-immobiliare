@@ -32,6 +32,9 @@ class HouseController extends Controller
     public function create()
     {
         //
+        $newHouse = House::all();
+        return view('houses.create', compact('newHouse'));
+
     }
 
     /**
@@ -43,6 +46,25 @@ class HouseController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'dimensione' => 'required|max:255',
+            'descrizione' => 'required',
+            'prezzo' => 'required|numeric',
+            'classe_energetica' => 'required|max:255',
+            'indirizzo' => 'required|max:255',
+            'piani' => 'required|max:255',
+            'proprietario' => 'required|max:255',
+            'numero_di_stanze' => 'required|max:255',
+            'data_di_costruzione' => 'required|date',
+            'garage' => 'required|max:255',
+        ]);
+        $form = $request->all();
+        $house = new House();
+        $house->fill($form);
+        $house->save();
+
+        return redirect()->route('houses.show', $house->id);
+
     }
 
     /**
