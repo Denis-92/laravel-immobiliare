@@ -12,6 +12,7 @@
     <h1>Details</h1>
 
     <h3>Proprietario: {{ $house->proprietario }}</h3>
+    <h3>Richiesta: {{ $house->prezzo }}</h3>
     <p>{{ $house->descrizione }}</p>
 
     <a href="/">Back</a>
