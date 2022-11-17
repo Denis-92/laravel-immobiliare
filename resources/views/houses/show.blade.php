@@ -17,6 +17,15 @@
 
     <a href="{{ route('houses.edit', $house->id) }}">Edit</a>
     <a href="/">Back</a>
+
+    <form action="{{ route('houses.destroy', $house->id) }}" method="post">
+        @csrf
+        @method('DELETE')
+
+        <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare la house?')">
+            ELIMINA
+        </button>
+    </form>
 </body>
 
 </html>
