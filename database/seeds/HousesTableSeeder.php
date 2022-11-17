@@ -20,19 +20,6 @@ class HousesTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        /*
-dimensione
-prezzo
-descrizione
-classe energetica
-indirizzo
-piani
-proprietario
-numero di stanze
-data di costruzione
-garage
-*/
-
 
         for($i = 0; $i < 50; $i++) {
             $house = new House();
