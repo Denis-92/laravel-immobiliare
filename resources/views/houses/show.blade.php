@@ -37,8 +37,7 @@
         <p>
             Persone che hanno appuntamento:
             @foreach ($house->customers as $appuntamento)
-                {{ $appuntamento->Name }}
-                <hr>
+                <br> {{ $appuntamento->Name }}
             @endforeach
 
         </p>
