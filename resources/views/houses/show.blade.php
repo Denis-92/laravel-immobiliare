@@ -32,6 +32,20 @@
             ELIMINA
         </button>
     </form>
+    <hr>
+    @if (count($house->customers) > 0)
+        <p>
+            Persone che hanno appuntamento:
+            @foreach ($house->customers as $appuntamento)
+                {{ $appuntamento->Name }}
+                <hr>
+            @endforeach
+
+        </p>
+    @else
+        <p>Nessun appuntamento per questa casa</p>
+    @endif
+
 </body>
 
 </html>
