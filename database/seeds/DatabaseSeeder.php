@@ -12,5 +12,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(HousesTableSeeder::class);
+        $this->call(AgentSeeder::class);
     }
 }

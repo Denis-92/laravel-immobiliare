@@ -18,6 +18,9 @@ class House extends Model
         'numero_di_stanze',
         'data_di_costruzione',
         'garage',
-
+        'agent_id'
     ];
+    public function agent(){
+        return $this->belongsTo('App\Agent');
+    }
 }

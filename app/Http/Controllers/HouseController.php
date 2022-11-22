@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\models\House;
+use App\Agent;
 use Illuminate\Support\Facades\Log;
 
 class HouseController extends Controller
@@ -90,7 +91,8 @@ class HouseController extends Controller
     public function edit(House $house)
     {
         //
-        return view('houses.edit', compact('house'));
+        $agents = Agent::all();
+        return view('houses.edit', compact(['house','agents']));
 
     }
 
@@ -115,6 +117,8 @@ class HouseController extends Controller
             'numero_di_stanze' => 'required|max:255',
             'data_di_costruzione' => 'required|date',
             'garage' => 'required|max:255',
+            'agent_id' => 'required|exists:agents,id'
+
         ]);
         $form = $request->all();
         $house->update($form);

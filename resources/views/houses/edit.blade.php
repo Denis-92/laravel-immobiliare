@@ -82,6 +82,18 @@
             @enderror
         </div>
 
+        <div>
+            <select name="agent_id" >
+                @foreach ($agents as $agent)
+                    <option value="{{ $agent->id }}" {{ $agent->id == $house->agent->id ? 'selected' : '' }}>{{ $agent->FullName }}</option>
+                @endforeach
+
+            </select>
+            @error('agent_id')
+                {{ $message }}
+            @enderror
+        </div>
+
         <input type="submit" value="SALVA">
     </form>
 @endsection

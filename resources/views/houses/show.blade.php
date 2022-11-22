@@ -14,7 +14,7 @@
     <h3>Proprietario: {{ $house->proprietario }}</h3>
     <h3>Richiesta: {{ $house->prezzo }}</h3>
     <p>{{ $house->descrizione }}</p>
-
+    <p>{{ $house->agent->FullName }}</p>
     <a href="{{ route('houses.edit', $house->id) }}">Edit</a>
     <a href="/">Back</a>
 
