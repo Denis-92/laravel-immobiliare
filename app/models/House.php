@@ -23,4 +23,8 @@ class House extends Model
     public function agent(){
         return $this->belongsTo('App\Agent');
     }
+
+    public function customers(){
+        return $this->belongsToMany('App\Customer');
+    }
 }
